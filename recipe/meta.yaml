@@ -9,6 +9,8 @@ package:
 source:
   url: https://github.com/arsenyinfo/{{ name }}/archive/refs/tags/{{ version }}.tar.gz
   sha256: 3f6a7838c3578deec662e63a8cae4ef8d836f6b0d970714be347f868cdcbf232
+  patches:
+    - opencv.patch
   
 build:
   number: 1

@@ -1,6 +1,6 @@
-From 7abc82b7d075fd105e2227ffab545721fa07739b Mon Sep 17 00:00:00 2001
+From 5a05e1e4e616be0580f887e9ac4d597c0859c6c8 Mon Sep 17 00:00:00 2001
 From: Jan Janssen <jan-janssen@users.noreply.github.com>
-Date: Wed, 31 May 2023 10:23:11 -0600
+Date: Wed, 31 May 2023 10:36:23 -0600
 Subject: [PATCH] Update setup.py
 
 ---
@@ -8,15 +8,15 @@ Subject: [PATCH] Update setup.py
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/setup.py b/setup.py
-index e260f6f..f555a41 100644
+index e260f6f..7051359 100644
 --- a/setup.py
 +++ b/setup.py
-@@ -18,7 +18,7 @@
- CHOOSE_INSTALL_REQUIRES = [
-     (
-         ("opencv-python>=4.0.1", "opencv-contrib-python>=4.0.1", "opencv-contrib-python-headless>=4.0.1"),
--        "opencv-python-headless>=4.0.1",
-+        # "opencv-python-headless>=4.0.1",
-     )
- ]
- 
+@@ -90,7 +90,7 @@ def load_version():
+     python_requires=REQUIRES_PYTHON,
+     url=URL,
+     packages=find_packages(exclude=("tests",)),
+-    install_requires=get_install_requirements(INSTALL_REQUIRES, CHOOSE_INSTALL_REQUIRES),
++    install_requires=INSTALL_REQUIRES,
+     include_package_data=True,
+     classifiers=[
+         "Programming Language :: Python",

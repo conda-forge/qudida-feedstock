@@ -11,7 +11,7 @@ source:
   sha256: 3f6a7838c3578deec662e63a8cae4ef8d836f6b0d970714be347f868cdcbf232
   
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -29,7 +29,10 @@ requirements:
 test:
   commands:
     - python -c "import importlib.util; assert importlib.util.find_spec('qudida')"
-
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/arsenyinfo/qudida

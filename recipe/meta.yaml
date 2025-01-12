@@ -11,22 +11,24 @@ source:
   sha256: 3f6a7838c3578deec662e63a8cae4ef8d836f6b0d970714be347f868cdcbf232
   
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.5
+    - python {{ python_min }}
   run:
     - numpy >=0.18.0
     - opencv >=4.0.1
-    - python >=3.5
+    - python >={{ python_min }}
     - scikit-learn >=0.19.1
     - typing-extensions
 
 test:
+  requires:
+    - python {{ python_min }}
   commands:
     - python -c "import importlib.util; assert importlib.util.find_spec('qudida')"
 
